@@ -2,6 +2,7 @@ require.config({
     baseUrl:'js/other',
     paths:{
         'jquery':'https://cdn.staticfile.org/jquery/2.0.0/jquery.min',
+        'ko':'../lib/knockout-3.5.1'
     },
     shim:{
         un:{
@@ -11,7 +12,10 @@ require.config({
     }
 })
 
-require(['jquery','say','un'],function($,say,u){
+require(['jquery','say','un','ko'],function($,say,u,ko){
+    ko.applyBindings({
+        'koName':"knockoutjs"
+    });
     console.log(u==null);
     console.log(u.unName);
     console.log($.name);
